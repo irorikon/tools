@@ -1,9 +1,9 @@
 /*
  * @Author: iRorikon
  * @Date: 2023-04-14 17:08:58
- * @FilePath: \api-service\pkg\version\version.go
+ * @FilePath: \api-service\pkg\version.go
  */
-package version
+package util
 
 import (
 	"fmt"

@@ -6,12 +6,13 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/irorikon/api-service/command"
+	"github.com/irorikon/api-service/config"
+	"github.com/irorikon/api-service/initialize"
 )
 
 func main() {
-	fmt.Println("Hello World!")
+	// 初始化zap日志库
+	config.Log = initialize.Zap()
 	command.Execute()
 }

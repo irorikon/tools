@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/irorikon/api-service/pkg/version"
+	"github.com/irorikon/api-service/util"
 	"github.com/spf13/cobra"
 )
 
@@ -17,7 +17,7 @@ var versionCommand = &cobra.Command{
 	Use:   "version",
 	Short: "Show current version of api-service",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println(version.VersionTpl())
+		fmt.Println(util.VersionTpl())
 		os.Exit(0)
 	},
 }

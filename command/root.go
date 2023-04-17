@@ -9,6 +9,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/irorikon/api-service/command/flags"
 	"github.com/spf13/cobra"
 )
 
@@ -23,4 +24,9 @@ func Execute() {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
+}
+
+func init() {
+	RootCommand.PersistentFlags().BoolVarP(&flags.Debug, "debug", "d", false, "Start with debug mode")
+	RootCommand.PersistentFlags().StringVarP(&flags.LogPath, "log-path", "l", "logs", "Log path")
 }
