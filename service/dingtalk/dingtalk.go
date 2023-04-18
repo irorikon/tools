@@ -18,9 +18,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/irorikon/api-service/config"
 	"github.com/irorikon/api-service/model"
-	"go.uber.org/zap"
 )
 
 type DingTalkService struct {
@@ -58,7 +56,6 @@ func (d *DingTalkService) URLWithTimestamp() (string, error) {
 	value.Set("timestamp", timestamp)
 	value.Set("sign", sign)
 	dtu.RawQuery = value.Encode()
-	config.Log.Info("URL", zap.String("URL", dtu.String()))
 	return dtu.String(), nil
 }
 
@@ -107,15 +104,6 @@ func (d *DingTalkService) SendMsg(message []byte) (*model.DingTalkResponse, erro
 	err = json.Unmarshal(resByte, res)
 	if err != nil {
 		return res, err
-	}
-	return res, nil
-}
-
-func (d *DingTalkService) FormatMsg(msg string) (*model.DingTalk, error) {
-	res := &model.DingTalk{}
-	err := json.Unmarshal([]byte(msg), res)
-	if err != nil {
-		return nil, err
 	}
 	return res, nil
 }
