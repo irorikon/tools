@@ -34,12 +34,11 @@ func NewDingTalkService(token, secret string) *DingTalkService {
 }
 
 func (d *DingTalkService) URLWithTimestamp() (string, error) {
-	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
-
+	timestamp := strconv.FormatInt(time.Now().Unix()*1000, 10)
 	dtu := url.URL{
 		Scheme: "https",
 		Host:   model.DingTalkAPI,
-		Path:   "/robot/send",
+		Path:   "robot/send",
 	}
 	value := url.Values{}
 	value.Set("access_token", d.AccessToken)
@@ -78,16 +77,12 @@ func (d *DingTalkService) SendMsg(message []byte) (*model.DingTalkResponse, erro
 		return res, err
 	}
 
-	req, err := http.NewRequest(
-		http.MethodPost,
-		pushURL,
-		bytes.NewReader(message),
-	)
+	req, err := http.NewRequest(http.MethodPost, pushURL, bytes.NewReader(message))
 	if err != nil {
 		return res, err
 	}
-	req.Header.Add("Content-Type", "application/json")
 	req.Header.Add("Accept-Charset", "utf8")
+	req.Header.Add("Content-Type", "application/json")
 
 	client := new(http.Client)
 	client.Timeout = time.Duration(30) * time.Second

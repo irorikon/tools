@@ -17,3 +17,11 @@ var (
 	Secret      string
 	Message     []string
 )
+
+// ip search
+var (
+	Type     string
+	Database string
+	Online   bool
+	IPs      []string
+)

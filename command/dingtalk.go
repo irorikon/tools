@@ -22,7 +22,6 @@ var dingtalkCommand = &cobra.Command{
 	Short: "Send message to DingTalk",
 	Run: func(cmd *cobra.Command, args []string) {
 		if flags.AccessToken != "" && flags.Secret != "" {
-			config.Log.Info("DingTalk access token and secret is set", zap.String("AccessToken", flags.AccessToken), zap.String("Secret", flags.Secret))
 			client := dingtalk.NewDingTalkService(flags.AccessToken, flags.Secret)
 			if flags.Message != nil {
 				for _, msgString := range flags.Message {
@@ -38,19 +37,22 @@ var dingtalkCommand = &cobra.Command{
 						config.Log.Error("Marshal error", zap.Error(err))
 						continue
 					}
-					if res, err := client.SendMsg(msgBytes); err != nil {
+					res, err := client.SendMsg(msgBytes)
+					if err != nil {
 						config.Log.Error("SendMsg error", zap.Error(err))
 						continue
-					} else {
-						if res.ErrCode != 0 {
-							config.Log.Error("SendMsg error", zap.Int("ErrCode", res.ErrCode), zap.String("ErrMsg", res.ErrMsg))
-							continue
-						}
 					}
+					if res.ErrCode != 0 {
+						config.Log.Error("SendMsg error", zap.Int("ErrCode", res.ErrCode), zap.String("ErrMsg", res.ErrMsg))
+						continue
+					}
+
 				}
 			} else {
-				fmt.Println("Message is empty")
+				config.Log.Error("Message is empty")
 			}
+		} else {
+			config.Log.Error("AccessToken or Secret is empty")
 		}
 	},
 }
@@ -58,6 +60,6 @@ var dingtalkCommand = &cobra.Command{
 func init() {
 	RootCommand.AddCommand(dingtalkCommand)
 	dingtalkCommand.Flags().StringArrayVarP(&flags.Message, "message", "m", nil, "Message to send")
-	dingtalkCommand.Flags().StringVarP(&flags.AccessToken, "token", "t", "", "DingTalk access token")
-	dingtalkCommand.Flags().StringVarP(&flags.Secret, "secret", "s", "", "DingTalk secret")
+	dingtalkCommand.Flags().StringVarP(&flags.AccessToken, "token", "t", "2ae287d756f9cb20702b725e92ebf72a76d6741a1842a30da9f8ecf39d9d5302", "DingTalk access token")
+	dingtalkCommand.Flags().StringVarP(&flags.Secret, "secret", "s", "SECadb3f65a3313d62520bd3b57fb4b739a7dcb7214e20468ac293fc7003fe9644c", "DingTalk secret")
 }

@@ -11,6 +11,7 @@ import (
 	"go.uber.org/zap/zapcore"
 )
 
+// Zap Config
 var (
 	Log *zap.Logger
 )
@@ -51,3 +52,5 @@ func TransportLevel() zapcore.Level {
 		return zap.InfoLevel
 	}
 }
+
+// IP Search Config
