@@ -25,3 +25,15 @@ var (
 	Online   bool
 	IPs      []string
 )
+
+// proxy command
+var (
+	Address    string
+	IP         string
+	Username   string
+	Password   string
+	TCPTimeout int
+	UDPTimeout int
+	IPv4       bool
+	IPv6       bool
+)
