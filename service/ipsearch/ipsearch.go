@@ -20,8 +20,8 @@ import (
 
 	"github.com/ip2location/ip2location-go/v9"
 	"github.com/ipipdotnet/ipdb-go"
-	"github.com/irorikon/api-service/command/flags"
-	"github.com/irorikon/api-service/model"
+	"github.com/irorikon/tools/command/flags"
+	"github.com/irorikon/tools/model"
 	"github.com/oschwald/geoip2-golang"
 )
 

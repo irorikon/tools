@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/irorikon/api-service/config"
+	"github.com/irorikon/tools/config"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )

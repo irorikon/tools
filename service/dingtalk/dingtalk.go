@@ -18,7 +18,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/irorikon/api-service/model"
+	"github.com/irorikon/tools/model"
 )
 
 type DingTalkService struct {

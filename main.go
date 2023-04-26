@@ -6,9 +6,9 @@
 package main
 
 import (
-	"github.com/irorikon/api-service/command"
-	"github.com/irorikon/api-service/config"
-	"github.com/irorikon/api-service/initialize"
+	"github.com/irorikon/tools/command"
+	"github.com/irorikon/tools/config"
+	"github.com/irorikon/tools/initialize"
 )
 
 func main() {

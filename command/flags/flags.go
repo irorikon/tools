@@ -37,3 +37,14 @@ var (
 	IPv4       bool
 	IPv6       bool
 )
+
+// download command
+var (
+	NumConnection int
+	Output        string
+	Timeout       int
+	Referer       string
+	UserAgent     bool
+	Trace         bool
+	URL           []string
+)

@@ -9,10 +9,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/irorikon/api-service/command/flags"
-	"github.com/irorikon/api-service/config"
-	"github.com/irorikon/api-service/initialize/internal"
-	"github.com/irorikon/api-service/util"
+	"github.com/irorikon/tools/command/flags"
+	"github.com/irorikon/tools/config"
+	"github.com/irorikon/tools/initialize/internal"
+	"github.com/irorikon/tools/util"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )

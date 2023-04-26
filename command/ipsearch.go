@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/irorikon/api-service/command/flags"
-	"github.com/irorikon/api-service/config"
-	"github.com/irorikon/api-service/service/ipsearch"
+	"github.com/irorikon/tools/command/flags"
+	"github.com/irorikon/tools/config"
+	"github.com/irorikon/tools/service/ipsearch"
 	"github.com/spf13/cobra"
 	"go.uber.org/zap"
 )

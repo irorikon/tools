@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/irorikon/api-service/command/flags"
+	"github.com/irorikon/tools/command/flags"
 	"github.com/spf13/cobra"
 )
 

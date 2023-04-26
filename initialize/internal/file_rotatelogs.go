@@ -10,8 +10,8 @@ import (
 	"path"
 	"time"
 
-	"github.com/irorikon/api-service/command/flags"
-	"github.com/irorikon/api-service/config"
+	"github.com/irorikon/tools/command/flags"
+	"github.com/irorikon/tools/config"
 	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
 	"go.uber.org/zap/zapcore"
 )

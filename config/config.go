@@ -6,7 +6,7 @@
 package config
 
 import (
-	"github.com/irorikon/api-service/command/flags"
+	"github.com/irorikon/tools/command/flags"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )

@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/irorikon/api-service/util"
+	"github.com/irorikon/tools/util"
 	"github.com/spf13/cobra"
 )
 

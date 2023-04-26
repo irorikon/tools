@@ -1,8 +1,8 @@
 package command
 
 import (
-	"github.com/irorikon/api-service/command/flags"
-	"github.com/irorikon/api-service/config"
+	"github.com/irorikon/tools/command/flags"
+	"github.com/irorikon/tools/config"
 	"github.com/spf13/cobra"
 	"github.com/txthinking/socks5"
 	"go.uber.org/zap"
